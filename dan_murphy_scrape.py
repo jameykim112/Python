@@ -11,8 +11,12 @@ option.add_argument(" — incognito")
 
 # Find the ChromeDriver and get website
 browser = webdriver.Chrome(executable_path="/Users/janetyuen/Documents/2. Side projects/Web Scraping/chromedriver",chrome_options=option)
-browser.get("https://www.danmurphys.com.au/search?searchTerm=hennessy")
+browser.get("https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac-700ml")
 
-# Find element based on xpath, what is xpath?
-prices = browser.find_elements_by_xpath('//span[@class="value"]')
-prices[1].text
+# Find elements based on xpath, what is xpath?
+prices = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/div[2]/div/div/div[2]/shop-add-to-cart/div/div[1]/div/div/p[1]/span')
+i = 0
+for i in range(len(prices)):
+    print(prices[i].text)
+
+prices[0].text
