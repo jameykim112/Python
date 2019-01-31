@@ -12,11 +12,16 @@ option.add_argument(" — incognito")
 # Find the ChromeDriver and get website
 browser = webdriver.Chrome(executable_path="/Users/janetyuen/Documents/2. Side projects/Web Scraping/chromedriver",chrome_options=option)
 browser.get("https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac-700ml")
+# Note: Include a pause/wait to ensure entire page has loaded before scraping
 
-# Find elements based on xpath, what is xpath?
-prices = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/div[2]/div/div/div[2]/shop-add-to-cart/div/div[1]/div/div/p[1]/span')
-i = 0
-for i in range(len(prices)):
-    print(prices[i].text)
 
+# Find price, brand, container using xPath
+#TODO: Can you include multiple find_elements_by_xpath in one line rather than repeating?
+prices = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/div[1]/aside/shop-add-to-cart/div/div[1]/div/div/p[1]/span')
+product_brand = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/h1/span[1]')
+product_name = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/h1/span[2]')
+
+#TODO: Format results to be included in Excel Workbook
 prices[0].text
+product_brand[0].text
+product_name[0].text
