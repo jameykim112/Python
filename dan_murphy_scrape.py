@@ -17,6 +17,13 @@ browser.get("https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac-7
 
 # Find price, brand, container using xPath
 #TODO: Can you include multiple find_elements_by_xpath in one line rather than repeating?
+#Include
+#xPaths = [] #Include required xPaths
+#info = []
+
+#for i in range(len(xPaths)):
+#  info.append(browser.find_elements_by_xpath(xPaths[i]))
+  
 prices = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/div[1]/aside/shop-add-to-cart/div/div[1]/div/div/p[1]/span')
 product_brand = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/h1/span[1]')
 product_name = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-product-detail/div/section/h1/span[2]')
