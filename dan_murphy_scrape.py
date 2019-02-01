@@ -25,3 +25,5 @@ product_name = browser.find_elements_by_xpath('//*[@id="main-content"]/div/shop-
 prices[0].text
 product_brand[0].text
 product_name[0].text
+
+print("Hello World")
