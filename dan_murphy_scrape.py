@@ -36,3 +36,5 @@ outputFile.close()
 # Close ChromeDriver
 browser.close()
 
+# Crontab setup to run code at 10:05pm daily
+print("Webscrape for " + product_brand.text + product_name.text & "completed")
