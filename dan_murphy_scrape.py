@@ -9,7 +9,7 @@ option.add_argument(" — incognito")
 
 # Find the ChromeDriver and get website
 #TODO: Make URL an input to make solution more flexible
-browser = webdriver.Chrome(executable_path="/Users/janetyuen/Documents/2. Side projects/Web Scraping/chromedriver",chrome_options=option)
+browser = webdriver.Chrome(executable_path="/Users/janetyuen/Documents/Side projects/Web Scraping/chromedriver",options=option)
 browser.get("https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac-700ml")
 
 # Find price, brand, container using xPath
@@ -28,13 +28,13 @@ prices_df.append([now.strftime("%d-%m-%y"),prices.text, product_brand.text, prod
 data = prices_df[-1][0]+'   '+prices_df[-1][1]
 
 # Import results to existing text file
-outputFile = open("/Users/janetyuen/Documents/2. Side projects/Web Scraping/webscraping_results.txt","a")
+outputFile = open("/Users/janetyuen/Documents/Side projects/Web Scraping/webscraping_results.txt","a")
 outputFile.write(data)
 outputFile.write("\n")
 outputFile.close()
 
 # Close ChromeDriver
-browser.close()
+browser.quit()
 
 # Crontab setup to run code at 10:05pm daily
-print("Webscrape for " + product_brand.text + product_name.text & "completed")
+print("Complete")
