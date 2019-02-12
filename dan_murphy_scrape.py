@@ -3,6 +3,10 @@ from selenium import webdriver #Initialise web browser
 import datetime #Print current date
 import pandas as pd
 
+#TODO: Refactor code to be OOP
+#TODO: Exception handling?
+#TODO: Write GitHub User Guide
+
 # Create an Incognito instance of Chrome
 option = webdriver.ChromeOptions()
 option.add_argument(" — incognito")
@@ -13,7 +17,7 @@ site_links = ["https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac
 i = 0
 for i in range(3):
     # Find the ChromeDriver and get website
-    #TODO: Make URL an input to make solution more flexible
+    
     browser = webdriver.Chrome(executable_path="/Users/janetyuen/Documents/Side projects/Web Scraping/chromedriver",options=option)
     browser.get(site_links[i])
     #"https://www.danmurphys.com.au/product/DM_38905/hennessy-vs-cognac-700ml"
